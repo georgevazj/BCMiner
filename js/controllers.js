@@ -6,4 +6,9 @@ angular.module("bcminer")
     $scope.middle = "Bloque de transacciones"
     $scope.right = "Controles";
     $scope.jumbo = "Cadena de bloques";
+
+    $scope.init = function(){
+    	console.log('Hola mundo!');
+    }
   })
+.

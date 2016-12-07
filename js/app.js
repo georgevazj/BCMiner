@@ -9,4 +9,7 @@ angular.module("bcminer",["ngRoute","ngResource"])
         controller: "MainController",
         templateUrl: "templates/dashboard.html"
       })
+      .otherwise({
+        redirectTo: '/'
+      })
   })
