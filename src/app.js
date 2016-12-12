@@ -6,8 +6,7 @@ angular.module("bcminer",["ngRoute","ngResource"])
   .config(function($routeProvider){
     $routeProvider
       .when("/", {
-        controller: "MainController",
-        templateUrl: "templates/layout.html"
+        templateUrl: "templates/users/users.html"
       })
       .otherwise({
         redirectTo: '/'
