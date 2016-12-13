@@ -8,6 +8,9 @@ angular.module("bcminer",["ngRoute","ngResource"])
       .when("/", {
         templateUrl: "templates/users/users.html"
       })
+      .when("/admin", {
+        templateUrl: "templates/admin/admin.html"
+      })
       .otherwise({
         redirectTo: '/'
       })

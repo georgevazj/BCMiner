@@ -1,7 +1,7 @@
 'use strict';
 angular
 	.module('bcminer')
-	.controller('Block', block);
+	.controller('usersBlock', block);
 
 function block(){
 	this.header = 'Bloque en curso';

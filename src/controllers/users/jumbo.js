@@ -1,7 +1,7 @@
 'use strict';
 angular
 	.module('bcminer')
-	.controller('Jumbo', jumbo);
+	.controller('usersJumbo', jumbo);
 
 function jumbo(){
 	this.header = 'Cadena de bloques';

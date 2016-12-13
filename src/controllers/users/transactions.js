@@ -1,7 +1,7 @@
 'use strict';
 angular
 	.module('bcminer')
-	.controller('Transactions', transactionsCtrl);
+	.controller('usersTransactions', transactionsCtrl);
 
 function transactionsCtrl(transactionsService){
 	this.header = 'Transacciones';

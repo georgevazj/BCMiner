@@ -1,7 +1,7 @@
 'use strict';
 angular
 	.module('bcminer')
-	.controller('Control', control);
+	.controller('usersControl', control);
 
 function control(){
 	this.header = 'Controles';
