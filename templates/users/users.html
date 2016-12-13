@@ -2,16 +2,16 @@
 <div class="col-md-4 col-sm-6 col-xs-12" ng-controller='Transactions as transactions'>
 	<div class="panel panel-primary">
 		<div class="panel-heading">{{ transactions.header}} </div>
-	</div>
-	<div class="panel-body" id="transactionsPanel">
-		<table class="table table-responsive table-hover">
-			<thead>
-				<tr>
-					<th>{{ transactions.col1 }}</th>
-					<th>{{ transactions.col2 }}</th>
-				</tr>
-			</thead>
-		</table>
+		<div class="panel-body" id="transactionsPanel">
+			<table class="table table-responsive table-hover">
+				<thead>
+					<tr>
+						<th>{{ transactions.col1 }}</th>
+						<th>{{ transactions.col2 }}</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
 	</div>
 </div>
 <div class="col-md-4 col-sm-6 col-xs-12" ng-controller='Block as block'>
@@ -45,7 +45,7 @@
 	</div>
 </div>
 <div class="row"></div>
-	<div class="jumbotron" ng-controller='Jumbo as jumbo'>
-		<h2 id="jumbo">{{ jumbo.header }}</h2>
-		<p>{{ jumbo.content }}</p>
-	</div>
+<div class="jumbotron" ng-controller='Jumbo as jumbo'>
+	<h2 id="jumbo">{{ jumbo.header }}</h2>
+	<p>{{ jumbo.content }}</p>
+</div>
