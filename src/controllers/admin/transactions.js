@@ -4,23 +4,25 @@ angular
 	.controller('adminTransactions', transactionsCtrl);
 
 function transactionsCtrl(transactionsService){
-	this.header = 'Transacciones';
-	this.label = 'Intervalos (segs.)';
+	var vm = this;
+	vm.header = 'Transacciones';
+	vm.label = 'Intervalos (segs.)';
 
-	this.contracts = 30;
-	this.shopping = 5;
-	this.services = 10;
+	vm.contracts = 30;
+	vm.shopping = 5;
+	vm.services = 10;
 
-	this.contractsSubmit = function(){
-		console.log(this.contracts);
+	vm.contractsSubmit = function(){
+		transactionsService.send(vm.contracts);
+		console.log(vm.contracts);
 	}
 
-	this.shoppingSubmit = function(){
-		console.log(this.shopping);
+	vm.shoppingSubmit = function(){
+		console.log(vm.shopping);
 	}
 
-	this.servicesSubmit = function(){
-		console.log(this.services);
+	vm.servicesSubmit = function(){
+		console.log(vm.services);
 	}
 
 }

@@ -6,6 +6,5 @@ angular
 function timerCtrl(transactionsService, timerService, $timeout){
 	var vm = this;
 	vm.header = 'Cronómetro';
-	
 }
 

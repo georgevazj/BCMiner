@@ -9,11 +9,40 @@ angular
 
 		service.RECONNECT_TIMEOUT = 30000;
 		service.SOCKET_URL = 'http://localhost:3000/messaging';
-		service.CHAT_TOPIC = "/topic/transactions";
+		service.TOPIC = "/topic/transactions";
 		service.CHAT_BROKER = "/app/messaging";
+
+		var stompClient = null;
+		var setConnected = false;
+
+		function connect(){
+		    var socket = new SockJS(service.SOCKET_URL);
+		    stompClient = Stomp.over(socket);
+		    stompClient.heartbeat.outgoing = 5000;
+		    stompClient.heartbeat.outgoing = 0;
+		    stompClient.connect({},function(frame){
+		        setConnected = true;
+		        console.log('Conectado: ' + frame);
+		        stompClient.subscribe('/topic/transactions',function(transaction){
+		            showTransaction(JSON.parse(transaction.body).blockId,JSON.parse(transaction.body).concept,JSON.parse(transaction.body).value);
+		        });
+		    });
+		}
+
 
 		service.receive = function(){
 			return listener.promise;
+		};
+
+		service.send = function(message){
+			var id = Math.floor(Math.random() * 1000000);
+			socket.stomp.send(service.CHAT_BROKER,{
+				priority: 9
+			}, JSON.stringify({
+				message: message,
+				id: id
+			}));
+			messageIds.push(id);
 		};
 
 		var reconnect = function(){
@@ -41,6 +70,6 @@ angular
 			socket.stomp.onclose = reconnect;
 		};
 
-		initialize();
+		connect();
 		return service;
 	});
