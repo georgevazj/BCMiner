@@ -13,15 +13,17 @@ function transactionsCtrl(transactionsService){
 	vm.services = 10;
 
 	vm.contractsSubmit = function(){
-		transactionsService.send(vm.contracts);
+		transactionsService.sendContracts(vm.contracts);
 		console.log(vm.contracts);
 	}
 
 	vm.shoppingSubmit = function(){
+		transactionsService.sendShoppings(vm.shopping);
 		console.log(vm.shopping);
 	}
 
 	vm.servicesSubmit = function(){
+		transactionsService.sendServices(vm.services);
 		console.log(vm.services);
 	}
 

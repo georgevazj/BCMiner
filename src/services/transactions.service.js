@@ -29,7 +29,6 @@ angular
 		    });
 		}
 
-
 		service.receive = function(){
 			return listener.promise;
 		};
@@ -48,6 +47,39 @@ angular
 			}));
 			messageIds.push(id);
 		};
+
+		service.sendContracts = function(interval){
+			var concepts = [
+							'Marriage contract',
+		                    'Land adquisition',
+		                    'Real Madrid contract',
+		                    'Mortgage'
+		                    ];
+            setInterval(function(){stompClient.send("/app/transaction", {}, JSON.stringify({'concept':chance.pickone(concepts),'value':chance.integer({min: 1,max:20})}));
+    		},interval * 1000);
+		}
+
+		service.sendShoppings = function(interval){
+		    var concepts = [
+					    	'Ferrari Enzo',
+					        'PlayStation 4',
+					        'Empire State Building',
+					        'Yacht'
+					        ];
+		    setInterval(function(){stompClient.send("/app/transaction", {}, JSON.stringify({'concept':chance.pickone(concepts),'value':chance.integer({min: 1,max:20})}));
+		    },interval * 1000);
+		}
+
+		service.sendServices = function(interval){
+		    var concepts = [
+		    				'Bridge construction ',
+					        'IT project ',
+					        'BBVA hq construction ',
+					        'New York World Trade Center design'
+					        ];
+		    setInterval(function(){stompClient.send("/app/transaction", {}, JSON.stringify({'concept':chance.pickone(concepts),'value':chance.integer({min: 1,max:20})}));
+		    },interval * 1000);
+		}
 
 		var reconnect = function(){
 			$timeout(function(){
