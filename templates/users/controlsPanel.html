@@ -1,0 +1,23 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">{{ controls.header}} </div>
+	<div class="panel-body">
+		<div class="input-group">
+			<span class="input-group-addon" id="hashAddon"><i class="fa fa-barcode" aria-hidden="true"></i></span>
+			<input type="text" class="form-control" ng-model='controls.hash' readonly="true" aria-describedby="hashAddon">
+		</div>
+		<div class="input-group">
+			<span class="input-group-addon" id="nonceAddon"><i class="fa fa-cogs" aria-hidden="true"></i></span>
+			<input type="text" class="form-control" ng-model='controls.nonce' readonly="true" aria-describedby="nonceAddon">
+		</div>
+		<div class="row"></div>
+		<br>
+		<div class="btn-group btn-group-justified" role="group">
+			<div class="btn-group" role="group">
+				<button class="btn btn-warning" ng-click="controls.getNonce()" id="calculate">CALCULAR</button>
+			</div>
+			<div class="btn-group" role="group">
+				<button class="btn btn-success" ng-click="controls.send()" id="send">ENVIAR</button>
+			</div>
+		</div>
+	</div>
+</div>
