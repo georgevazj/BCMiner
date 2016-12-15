@@ -1,0 +1,32 @@
+<div class="panel panel-primary">
+		<div class="panel-heading">{{ transactions.header }}</div>
+		<div class="panel-body">
+			<label>{{ transactions.label }}</label>
+			<div class="input-group">
+				<span class="input-group-addon" id="contractsAddon">
+					<i class="fa fa-file-text" aria-hidden="true"></i>
+				</span>
+				<input class="form-control" ng-model='transactions.contracts' type="text" maxlength="3" aria-describedby="contractsAddon">
+			</div>
+			<br>
+			<div class="input-group">
+				<span class="input-group-addon" id="shoppingAddon">
+					<i class="fa fa-lg fa-btc" aria-hidden="true"></i>
+				</span>
+				<input class="form-control" ng-model='transactions.shopping' type="text" maxlength="3" aria-describedby="shoppingAddon">
+			</div>
+			<br>
+			<div class="input-group">
+				<span class="input-group-addon" id="servicesAddon">
+					<i class="fa fa-wrench" aria-hidden="true"></i>
+				</span>
+				<input class="form-control" ng-model='transactions.services' type="text" maxlength="3" aria-describedby="servicesAddon">
+			</div>
+			<br>
+			<div class="btn-group col-md-offset-4" role="group">
+				<button class="btn btn-primary glyphicon glyphicon-file" type="button" ng-click="transactions.contractsSubmit()"></button>
+				<button class="btn btn-primary glyphicon glyphicon-btc" type="button" ng-click="transactions.shoppingSubmit()"></button>
+				<button class="btn btn-primary glyphicon glyphicon-wrench" type="button" ng-click="transactions.servicesSubmit()"></button>
+			</div>
+		</div>
+	</div>
