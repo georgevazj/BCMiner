@@ -1,16 +1,16 @@
 <div class="panel panel-primary">
-		<div class="panel-heading">{{ block.header }}</div>
-		<div class="panel-body">
-			<label>{{ block.label }}</label>
-			<div class="input-group">
-				<span class="input-group-addon" id="timerAddon">
-					<i class="fa fa-clock-o" aria-hidden="true"></i>
-				</span>
-				<input class="form-control" ng-model='block.timer' type="text" maxlength="2" aria-describedby="timerAddon">
-			</div>
-			<br>
-			<div class="col-md-offset-5">
-				<button class="col-md-4 btn btn-success glyphicon glyphicon-time" ng-click="block.timerSubmit()"></button>
-			</div>
+	<div class="panel-heading">{{ block.header }}</div>
+	<div class="panel-body">
+		<label>{{ block.label }}</label>
+		<div class="input-group">
+			<span class="input-group-addon" id="timerAddon">
+				<i class="fa fa-clock-o" aria-hidden="true"></i>
+			</span>
+			<input class="form-control" ng-model='block.timer' type="text" maxlength="2" aria-describedby="timerAddon">
+		</div>
+		<br>
+		<div class="col-md-offset-5">
+			<button class="col-md-4 btn btn-success glyphicon glyphicon-time" ng-click="block.timerSubmit()"></button>
 		</div>
 	</div>
+</div>

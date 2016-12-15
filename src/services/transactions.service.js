@@ -34,6 +34,10 @@ angular
 			return listener.promise;
 		};
 
+		service.getStatus = function(){
+			return getStatus;
+		}
+
 		service.send = function(message){
 			var id = Math.floor(Math.random() * 1000000);
 			socket.stomp.send(service.CHAT_BROKER,{
@@ -69,7 +73,6 @@ angular
 			socket.stomp.connect({}, startListener);
 			socket.stomp.onclose = reconnect;
 		};
-
 		connect();
 		return service;
 	});
